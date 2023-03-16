@@ -23,7 +23,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:contentDescription="Logo"
+                android:contentDescription="@string/description_logo"
                 android:scaleType="fitCenter"
                 android:src="@drawable/mytlulogo"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|start"
-                    android:text="Xin chào cán bộ, sinh viên của trường đại học Thủy Lợi"
+                    android:text="@string/login_title"
                     android:textColor="?attr/colorOnSurface"
                     android:textFontWeight="900"
                     tools:targetApi="p" />
@@ -83,7 +83,7 @@
                     android:id="@+id/username_textfield"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Mã sinh viên hoặc email"
+                    android:hint="@string/hint_username"
                     app:layout_constraintBottom_toTopOf="@id/password_textfield"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_chainStyle="packed">
@@ -102,7 +102,7 @@
                     android:id="@+id/password_textfield"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Mật khẩu"
+                    android:hint="@string/hint_password"
                     app:endIconMode="password_toggle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/username_textfield">
@@ -111,9 +111,9 @@
                         android:id="@+id/password_edittext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:singleLine="true"
                         android:imeOptions="actionGo"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:singleLine="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,7 +142,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:text="Đăng nhập" />
+                android:text="@string/button_login" />
 
         </FrameLayout>
 

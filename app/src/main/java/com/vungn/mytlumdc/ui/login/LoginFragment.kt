@@ -2,6 +2,7 @@ package com.vungn.mytlumdc.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
@@ -48,18 +49,26 @@ class LoginFragment : Fragment() {
     private fun setupUI(view: View) {
         // Set up touch listener for non-text box views to hide keyboard.
         if (view !is EditText) {
-            view.setOnClickListener {
-                requireActivity().hideSoftKeyboard()
+            view.setOnTouchListener { v, e ->
+                when (e.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        requireActivity().hideSoftKeyboard()
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        v.performClick()
+                    }
+                }
+                true
             }
         }
 
         //If a layout container, iterate over children and seed recursion.
-        if (view is ViewGroup) {
-            for (i in 0 until view.childCount) {
-                val innerView = view.getChildAt(i)
-                setupUI(innerView)
-            }
-        }
+//        if (view is ViewGroup) {
+//            for (i in 0 until view.childCount) {
+//                val innerView = view.getChildAt(i)
+//                setupUI(innerView)
+//            }
+//        }
     }
 
     private fun handleEvents() {

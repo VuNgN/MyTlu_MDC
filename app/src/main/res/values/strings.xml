@@ -2,4 +2,9 @@
     <string name="app_name">MyTluMDC</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_logo">Logo</string>
+    <string name="login_title">Xin chào cán bộ, sinh viên của trường đại học Thủy Lợi</string>
+    <string name="hint_username">Mã sinh viên hoặc email</string>
+    <string name="hint_password">Mật khẩu</string>
+    <string name="button_login">Đăng nhập</string>
 </resources>

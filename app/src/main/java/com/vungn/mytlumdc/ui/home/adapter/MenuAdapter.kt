@@ -13,13 +13,16 @@ import com.vungn.mytlumdc.databinding.ItemHomeMenuBinding
 class MenuAdapter constructor(private val items: List<MenuItem>) :
     RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
 
-    class ViewHolder(view: ItemHomeMenuBinding) : RecyclerView.ViewHolder(view.root) {
+    class ViewHolder(private val view: ItemHomeMenuBinding) : RecyclerView.ViewHolder(view.root) {
         private val icon: ImageView = view.icon
         private val title: TextView = view.title
 
         fun setupUI(icon: Drawable, title: String) {
             this.icon.setImageDrawable(icon)
             this.title.text = title
+            view.root.setOnClickListener {
+
+            }
         }
     }
 

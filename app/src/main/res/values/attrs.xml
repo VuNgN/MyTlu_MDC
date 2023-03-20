@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="colorSurface1" format="color" />
     <attr name="colorHomeBackground" format="color" />
     <attr name="colorMenuButtonBackground" format="color" />
 </resources>

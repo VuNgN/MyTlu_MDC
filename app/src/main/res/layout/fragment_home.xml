@@ -3,7 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorHomeBackground"
+    android:padding="10dp"
     tools:context=".ui.home.views.HomeFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_home_menu" />
 
 </FrameLayout>

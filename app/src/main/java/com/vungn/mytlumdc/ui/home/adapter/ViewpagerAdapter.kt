@@ -5,7 +5,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.vungn.mytlumdc.ui.home.views.HomeFragment
 import com.vungn.mytlumdc.ui.home.views.NotificationFragment
 
-class MenuViewpagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
+class ViewpagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = TABS_SIZE
 
     override fun createFragment(position: Int): Fragment {

@@ -1,21 +1,21 @@
 package com.vungn.mytlumdc.ui.home.views
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.ColorUtils
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
-import com.google.android.material.color.MaterialColors
+import androidx.recyclerview.widget.GridLayoutManager
 import com.vungn.mytlumdc.databinding.FragmentHomeBinding
-import com.vungn.mytlumdc.util.isDarkThemeOn
-import kotlin.properties.Delegates
+import com.vungn.mytlumdc.ui.home.adapter.MenuAdapter
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private var isDarkMode by Delegates.notNull<Boolean>()
+
+    //    private var isDarkMode by Delegates.notNull<Boolean>()
+    private lateinit var adapter: MenuAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,19 +28,39 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        isDarkMode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            resources.configuration.isNightModeActive
-        } else {
-            requireContext().isDarkThemeOn()
-        }
-        if (!isDarkMode) {
-            view.setBackgroundColor(
-                ColorUtils.setAlphaComponent(
-                    MaterialColors.getColor(
-                        view,
-                        com.google.android.material.R.attr.colorPrimary,
+        setupUI()
+    }
+
+    private fun setupUI() {
+        adapter =
+            MenuAdapter(
+                listOf(
+                    MenuAdapter.MenuItem(
+                        icon = AppCompatResources.getDrawable(
+                            requireContext(),
+                            com.vungn.mytlumdc.R.drawable.round_newspaper_24
+                        )!!,
+                        title = "Tin tuc"
                     ),
-                    15
+                    MenuAdapter.MenuItem(
+                        icon = AppCompatResources.getDrawable(
+                            requireContext(),
+                            com.vungn.mytlumdc.R.drawable.round_how_to_reg_24
+                        )!!,
+                        title = "Diem danh"
+                    )
+                )
+            )
+        binding.apply {
+            val spanCount = 2
+            val spacing = 30 // 30px = 10dp
+            recycleView.adapter = adapter
+            recycleView.layoutManager = GridLayoutManager(context, spanCount)
+            recycleView.addItemDecoration(
+                MenuAdapter.GridSpacingItemDecoration(
+                    spanCount = spanCount,
+                    spacing = spacing,
+                    includeEdge = true
                 )
             )
         }

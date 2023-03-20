@@ -12,9 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.vungn.mytlumdc.R
 import com.vungn.mytlumdc.databinding.FragmentMainBinding
-import com.vungn.mytlumdc.ui.home.adapter.MenuViewpagerAdapter
-import com.vungn.mytlumdc.ui.home.adapter.MenuViewpagerAdapter.Companion.HOME_TAB
-import com.vungn.mytlumdc.ui.home.adapter.MenuViewpagerAdapter.Companion.NOTIFICATION_TAB
+import com.vungn.mytlumdc.ui.home.adapter.ViewpagerAdapter
+import com.vungn.mytlumdc.ui.home.adapter.ViewpagerAdapter.Companion.HOME_TAB
+import com.vungn.mytlumdc.ui.home.adapter.ViewpagerAdapter.Companion.NOTIFICATION_TAB
 import com.vungn.mytlumdc.ui.login.LoginFragment
 import com.vungn.mytlumdc.ui.user.UserViewModel
 import com.vungn.mytlumdc.ui.user.impl.UserViewModelImpl
@@ -24,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private lateinit var menuViewpagerAdapter: MenuViewpagerAdapter
+    private lateinit var viewpagerAdapter: ViewpagerAdapter
     private val userViewModel: UserViewModel by activityViewModels<UserViewModelImpl>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,8 +59,8 @@ class MainFragment : Fragment() {
                 navController.navigate(R.id.loginFragment)
             }
         }
-        menuViewpagerAdapter = MenuViewpagerAdapter(this)
-        binding.viewpager2.adapter = menuViewpagerAdapter
+        viewpagerAdapter = ViewpagerAdapter(this)
+        binding.viewpager2.adapter = viewpagerAdapter
         TabLayoutMediator(binding.tabLayout, binding.viewpager2) { tab, position ->
             when (position) {
                 HOME_TAB -> tab.icon =

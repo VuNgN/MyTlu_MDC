@@ -1,4 +1,3 @@
-
 <resources>
     <color name="seed">#005FB0</color>
     <color name="md_theme_light_primary">#005FB0</color>
@@ -61,4 +60,9 @@
     <color name="md_theme_dark_surfaceTint">#A6C8FF</color>
     <color name="md_theme_dark_outlineVariant">#43474E</color>
     <color name="md_theme_dark_scrim">#000000</color>
+
+    <!--  Custom  -->
+    <color name="md_theme_light_surface1">#0D005FB0</color>
+    <color name="md_theme_dark_surface1">#0DA6C8FF</color>
+
 </resources>

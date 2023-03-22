@@ -7,4 +7,8 @@
     <string name="hint_username">Mã sinh viên hoặc email</string>
     <string name="hint_password">Mật khẩu</string>
     <string name="button_login">Đăng nhập</string>
+    <string name="turn_flash_on">Turn flash on</string>
+    <string name="flash">flash</string>
+    <string name="profile_navigation">Profile navigation</string>
+    <string name="profile">Profile</string>
 </resources>

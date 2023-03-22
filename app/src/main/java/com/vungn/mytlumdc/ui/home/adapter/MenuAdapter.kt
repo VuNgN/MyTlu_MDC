@@ -9,9 +9,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vungn.mytlumdc.databinding.ItemHomeMenuBinding
+import com.vungn.mytlumdc.util.Feature
 
 class MenuAdapter constructor(private val items: List<MenuItem>) :
     RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
+    private lateinit var onItemClickListener: (Feature) -> Unit
+
+    fun setOnItemClickListener(onItemClickListener: (Feature) -> Unit) {
+        this.onItemClickListener = onItemClickListener
+    }
 
     class ViewHolder(private val view: ItemHomeMenuBinding) : RecyclerView.ViewHolder(view.root) {
         private val icon: ImageView = view.icon
@@ -20,9 +26,10 @@ class MenuAdapter constructor(private val items: List<MenuItem>) :
         fun setupUI(icon: Drawable, title: String) {
             this.icon.setImageDrawable(icon)
             this.title.text = title
-            view.root.setOnClickListener {
+        }
 
-            }
+        fun handleEvent(feature: Feature, onItemClickListener: (Feature) -> Unit) {
+            view.root.setOnClickListener { onItemClickListener(feature) }
         }
     }
 
@@ -36,9 +43,10 @@ class MenuAdapter constructor(private val items: List<MenuItem>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.setupUI(items[position].icon, items[position].title)
+        holder.handleEvent(items[position].feature, onItemClickListener)
     }
 
-    data class MenuItem(val icon: Drawable, val title: String)
+    data class MenuItem(val feature: Feature, val icon: Drawable, val title: String)
 
     class GridSpacingItemDecoration constructor(
         private val spanCount: Int,
@@ -72,8 +80,5 @@ class MenuAdapter constructor(private val items: List<MenuItem>) :
             }
         }
 
-    }
-
-    companion object {
     }
 }

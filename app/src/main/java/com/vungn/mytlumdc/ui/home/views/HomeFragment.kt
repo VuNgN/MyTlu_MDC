@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.vungn.mytlumdc.R
 import com.vungn.mytlumdc.databinding.FragmentHomeBinding
 import com.vungn.mytlumdc.ui.home.adapter.MenuAdapter
+import com.vungn.mytlumdc.util.Feature
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -36,21 +39,31 @@ class HomeFragment : Fragment() {
             MenuAdapter(
                 listOf(
                     MenuAdapter.MenuItem(
+                        feature = Feature.NEWS,
                         icon = AppCompatResources.getDrawable(
                             requireContext(),
-                            com.vungn.mytlumdc.R.drawable.round_newspaper_24
+                            R.drawable.round_newspaper_24
                         )!!,
                         title = "Tin tuc"
                     ),
                     MenuAdapter.MenuItem(
+                        feature = Feature.ATTENDANCE,
                         icon = AppCompatResources.getDrawable(
                             requireContext(),
-                            com.vungn.mytlumdc.R.drawable.round_how_to_reg_24
+                            R.drawable.round_how_to_reg_24
                         )!!,
                         title = "Diem danh"
                     )
                 )
             )
+        adapter.setOnItemClickListener { feature ->
+            when (feature) {
+                Feature.NEWS -> {}
+                Feature.ATTENDANCE -> {
+                    findNavController().navigate(R.id.action_mainFragment_to_attendanceFragment)
+                }
+            }
+        }
         binding.apply {
             val spanCount = 2
             val spacing = 30 // 30px = 10dp

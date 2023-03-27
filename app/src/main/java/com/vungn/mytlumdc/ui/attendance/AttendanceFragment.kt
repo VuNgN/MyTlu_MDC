@@ -2,13 +2,16 @@ package com.vungn.mytlumdc.ui.attendance
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.Outline
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.util.Size
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewOutlineProvider
 import android.widget.Toast
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
@@ -52,8 +55,30 @@ class AttendanceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         cameraExecutor = Executors.newSingleThreadExecutor()
-        startCamera()
+        setupUi()
         eventsHandle()
+        startCamera()
+    }
+
+    private fun setupUi() {
+        val viewOutlineProvider = object : ViewOutlineProvider() {
+            override fun getOutline(view: View?, outline: Outline?) {
+                val cornerRadiusDp = 28f
+                val cornerRadius = TypedValue.applyDimension(
+                    TypedValue.COMPLEX_UNIT_DIP,
+                    cornerRadiusDp,
+                    resources.displayMetrics
+                )
+                if (view != null) {
+                    outline?.setRoundRect(
+                        0, 0, view.width,
+                        (view.height + cornerRadius).toInt(), cornerRadius
+                    )
+                }
+            }
+        }
+        binding.viewfinder.outlineProvider = viewOutlineProvider
+        binding.viewfinder.clipToOutline = true
     }
 
     override fun onDestroy() {

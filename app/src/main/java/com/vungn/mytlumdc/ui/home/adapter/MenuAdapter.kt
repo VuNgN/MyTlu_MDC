@@ -68,14 +68,14 @@ class MenuAdapter constructor(private val items: List<MenuItem>) :
                 outRect.right = (column + 1) * spacing / spanCount
 
                 if (position < spanCount) {
-                    outRect.top = spacing
+                    outRect.top = spacing * 2
                 }
-                outRect.bottom = spacing
+                outRect.bottom = spacing * 2
             } else {
                 outRect.left = column * spacing / spanCount
                 outRect.right = spacing - (column + 1) * spacing / spanCount
                 if (position >= spanCount) {
-                    outRect.top = spacing
+                    outRect.top = spacing * 2
                 }
             }
         }

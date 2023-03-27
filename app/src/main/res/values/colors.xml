@@ -63,6 +63,14 @@
 
     <!--  Custom  -->
     <color name="md_theme_light_surface1">#0D005FB0</color>
+    <color name="md_theme_light_surface2">#14005FB0</color>
+    <color name="md_theme_light_surface3">#1C005FB0</color>
+    <color name="md_theme_light_surface4">#1F005FB0</color>
+    <color name="md_theme_light_surface5">#24005FB0</color>
     <color name="md_theme_dark_surface1">#0DA6C8FF</color>
+    <color name="md_theme_dark_surface2">#14A6C8FF</color>
+    <color name="md_theme_dark_surface3">#1CA6C8FF</color>
+    <color name="md_theme_dark_surface4">#1FA6C8FF</color>
+    <color name="md_theme_dark_surface5">#24A6C8FF</color>
 
 </resources>

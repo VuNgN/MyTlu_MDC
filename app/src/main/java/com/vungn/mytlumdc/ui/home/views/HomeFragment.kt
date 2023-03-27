@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
             }
         }
         binding.apply {
-            val spanCount = 2
+            val spanCount = 4
             val spacing = 30 // 30px = 10dp
             recycleView.adapter = adapter
             recycleView.layoutManager = GridLayoutManager(context, spanCount)

@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewOutlineProvider
 import android.widget.Toast
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.Preview
@@ -21,6 +22,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.vungn.mytlumdc.R
 import com.vungn.mytlumdc.databinding.FragmentAttendanceBinding
 import com.vungn.mytlumdc.ui.attendance.analyzer.QrCodeAnalyzer
 import java.util.concurrent.ExecutorService
@@ -31,6 +33,8 @@ class AttendanceFragment : Fragment() {
     private val binding: FragmentAttendanceBinding
         get() = _binding!!
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var cam: androidx.camera.core.Camera
+    private var isFlashOn: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -90,6 +94,22 @@ class AttendanceFragment : Fragment() {
         binding.topAppBar.setNavigationOnClickListener {
             findNavController().popBackStack()
         }
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.flash -> {
+                    if (cam.cameraInfo.hasFlashUnit()) {
+                        cam.cameraControl.enableTorch(!isFlashOn)
+                        isFlashOn = !isFlashOn
+                    }
+                    menuItem.icon = AppCompatResources.getDrawable(
+                        requireContext(),
+                        if (isFlashOn) R.drawable.baseline_flash_off_24 else R.drawable.baseline_flash_on_24
+                    )
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
@@ -131,7 +151,7 @@ class AttendanceFragment : Fragment() {
                 cameraProvider.unbindAll()
 
                 // Bind use cases to camera
-                cameraProvider.bindToLifecycle(
+                cam = cameraProvider.bindToLifecycle(
                     this.viewLifecycleOwner, cameraSelector, preview, imageAnalyzer
                 )
             } catch (exc: Exception) {

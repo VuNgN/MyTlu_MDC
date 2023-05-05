@@ -39,8 +39,11 @@ android {
 }
 
 dependencies {
+    // Coil
+    implementation "io.coil-kt:coil:2.3.0"
+
     //Barcode
-    implementation 'com.google.mlkit:barcode-scanning:17.0.3'
+    implementation 'com.google.mlkit:barcode-scanning:17.1.0'
 
     // Camera X
     implementation "androidx.camera:camera-core:$camerax_version"

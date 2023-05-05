@@ -1,5 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
 
+<resources>
     <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
@@ -18,7 +18,6 @@
         <item name="colorOnError">@color/md_theme_light_onError</item>
         <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
         <item name="android:colorBackground">@color/md_theme_light_background</item>
-        <item name="colorBackground">@color/md_theme_light_background</item>
         <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
         <item name="colorSurface">@color/md_theme_light_surface</item>
         <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
@@ -27,16 +26,21 @@
         <item name="colorOutline">@color/md_theme_light_outline</item>
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
+        <item name="colorPing">#b80562</item>
+        <item name="colorOnPing">#ffffff</item>
+        <item name="colorPingContainer">#ffd9e2</item>
+        <item name="colorOnPingContainer">#3e001d</item>
+        <item name="harmonizePing">false</item>
+        <item name="colorOrange">#a23f00</item>
+        <item name="colorOnOrange">#ffffff</item>
+        <item name="colorOrangeContainer">#ffdbcd</item>
+        <item name="colorOnOrangeContainer">#351000</item>
+        <item name="harmonizeOrange">false</item>
+        <item name="colorYellow">#6b5f00</item>
+        <item name="colorOnYellow">#ffffff</item>
+        <item name="colorYellowContainer">#ffe31a</item>
+        <item name="colorOnYellowContainer">#201c00</item>
+        <item name="harmonizeYellow">false</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
-
-        <item name="colorSurface1">@color/md_theme_light_surface1</item>
-        <item name="colorSurface2">@color/md_theme_light_surface2</item>
-        <item name="colorSurface3">@color/md_theme_light_surface3</item>
-        <item name="colorSurface4">@color/md_theme_light_surface4</item>
-        <item name="colorSurface5">@color/md_theme_light_surface5</item>
-        <item name="colorHomeBackground">@color/md_theme_light_surface1</item>
-        <item name="colorMenuButtonBackground">@color/md_theme_light_background</item>
-        <item name="android:statusBarColor">@color/md_theme_light_background</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 </resources>

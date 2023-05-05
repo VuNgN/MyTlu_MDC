@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+    <attr name="colorPing" format="color" />
+    <attr name="colorOnPing" format="color" />
+    <attr name="colorPingContainer" format="color" />
+    <attr name="colorOnPingContainer" format="color" />
+    <attr name="harmonizePing" format="boolean" />
+    <attr name="colorOrange" format="color" />
+    <attr name="colorOnOrange" format="color" />
+    <attr name="colorOrangeContainer" format="color" />
+    <attr name="colorOnOrangeContainer" format="color" />
+    <attr name="harmonizeOrange" format="boolean" />
+    <attr name="colorYellow" format="color" />
+    <attr name="colorOnYellow" format="color" />
+    <attr name="colorYellowContainer" format="color" />
+    <attr name="colorOnYellowContainer" format="color" />
+    <attr name="harmonizeYellow" format="boolean" />
     <attr name="colorBackground" format="color" />
     <attr name="colorSurface1" format="color" />
     <attr name="colorSurface2" format="color" />

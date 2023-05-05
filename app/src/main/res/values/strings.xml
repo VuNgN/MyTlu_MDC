@@ -11,4 +11,6 @@
     <string name="flash">flash</string>
     <string name="profile_navigation">Profile navigation</string>
     <string name="profile">Profile</string>
+    <string name="attend">Điểm danh</string>
+    <string name="notification_title">Thông báo</string>
 </resources>

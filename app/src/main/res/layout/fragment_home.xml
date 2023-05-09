@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
     tools:context=".ui.home.views.HomeFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycle_view"
-        android:layout_width="match_parent"
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:itemCount="2"
-        tools:listitem="@layout/item_home_menu" />
+        android:contentDescription="@null"
+        android:src="@drawable/mytlulogo" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageView1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_border_color="?attr/colorOutline"
+            app:riv_border_width="2dip"
+            app:riv_corner_radius="50dip"
+            app:riv_mutate_background="true"
+            app:riv_oval="true"
+            app:riv_tile_mode="repeat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

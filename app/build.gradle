@@ -39,6 +39,9 @@ android {
 }
 
 dependencies {
+    // Rounded corner
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
     // Coil
     implementation "io.coil-kt:coil:2.3.0"
 

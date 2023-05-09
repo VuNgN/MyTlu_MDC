@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/outline_home_24"
+        android:title="Trang chủ"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/featureFragment"
+        android:icon="@drawable/outline_apps_24"
+        android:title="Tiện ích"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/spacing"
+        android:enabled="false"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/outline_notifications_24"
+        android:title="Thông báo"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/settingFragment"
+        android:icon="@drawable/outline_settings_24"
+        android:title="Cài đặt"
+        app:showAsAction="ifRoom" />
+</menu>

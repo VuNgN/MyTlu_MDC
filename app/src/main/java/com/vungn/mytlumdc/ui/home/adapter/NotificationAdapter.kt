@@ -4,14 +4,11 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.vungn.mytlumdc.R
 import com.vungn.mytlumdc.data.model.Notification
 import com.vungn.mytlumdc.databinding.AttendanceNoticeBinding
 import com.vungn.mytlumdc.databinding.NewsNoticeBinding
-import com.vungn.mytlumdc.util.notification.NotificationStatus
 import com.vungn.mytlumdc.util.notification.NotificationType
 import java.util.Date
 
@@ -24,27 +21,27 @@ class NotificationAdapter(
         fun bind(notification: Notification) {
             val typedValue = TypedValue()
             binding.apply {
-                root.setBackgroundColor(
-                    when (notification.status) {
-                        NotificationStatus.DELIVERED -> {
-                            root.context.theme.resolveAttribute(
-                                R.attr.colorSurface2,
-                                typedValue,
-                                true
-                            )
-                            ContextCompat.getColor(root.context, typedValue.resourceId)
-                        }
-
-                        NotificationStatus.SEEN -> {
-                            root.context.theme.resolveAttribute(
-                                R.attr.colorBackground,
-                                typedValue,
-                                true
-                            )
-                            ContextCompat.getColor(root.context, typedValue.resourceId)
-                        }
-                    }
-                )
+//                root.setBackgroundColor(
+//                    when (notification.status) {
+//                        NotificationStatus.DELIVERED -> {
+//                            root.context.theme.resolveAttribute(
+//                                R.attr.colorSurface2,
+//                                typedValue,
+//                                true
+//                            )
+//                            ContextCompat.getColor(root.context, typedValue.resourceId)
+//                        }
+//
+//                        NotificationStatus.SEEN -> {
+//                            root.context.theme.resolveAttribute(
+//                                R.attr.colorBackground,
+//                                typedValue,
+//                                true
+//                            )
+//                            ContextCompat.getColor(root.context, typedValue.resourceId)
+//                        }
+//                    }
+//                )
                 title.text = notification.title
                 subTitle.text = notification.createOn.toString()
                 attendButton.visibility =
@@ -62,27 +59,27 @@ class NotificationAdapter(
         fun bind(notification: Notification) {
             val typedValue = TypedValue()
             binding.apply {
-                root.setBackgroundColor(
-                    when (notification.status) {
-                        NotificationStatus.DELIVERED -> {
-                            root.context.theme.resolveAttribute(
-                                R.attr.colorSurface2,
-                                typedValue,
-                                true
-                            )
-                            ContextCompat.getColor(root.context, typedValue.resourceId)
-                        }
-
-                        NotificationStatus.SEEN -> {
-                            root.context.theme.resolveAttribute(
-                                R.attr.colorBackground,
-                                typedValue,
-                                true
-                            )
-                            ContextCompat.getColor(root.context, typedValue.resourceId)
-                        }
-                    }
-                )
+//                root.setBackgroundColor(
+//                    when (notification.status) {
+//                        NotificationStatus.DELIVERED -> {
+//                            root.context.theme.resolveAttribute(
+//                                R.attr.colorSurface2,
+//                                typedValue,
+//                                true
+//                            )
+//                            ContextCompat.getColor(root.context, typedValue.resourceId)
+//                        }
+//
+//                        NotificationStatus.SEEN -> {
+//                            root.context.theme.resolveAttribute(
+//                                R.attr.colorBackground,
+//                                typedValue,
+//                                true
+//                            )
+//                            ContextCompat.getColor(root.context, typedValue.resourceId)
+//                        }
+//                    }
+//                )
                 title.text = notification.title
                 subTitle.text = notification.createOn.toString()
                 media.load(notification.image)

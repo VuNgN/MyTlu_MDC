@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import com.vungn.mytlumdc.R
 import com.vungn.mytlumdc.databinding.FragmentHomeBinding
 import com.vungn.mytlumdc.ui.home.adapter.MenuAdapter
@@ -67,15 +66,15 @@ class HomeFragment : Fragment() {
         binding.apply {
             val spanCount = 4
             val spacing = 30 // 30px = 10dp
-            recycleView.adapter = adapter
-            recycleView.layoutManager = GridLayoutManager(context, spanCount)
-            recycleView.addItemDecoration(
-                MenuAdapter.GridSpacingItemDecoration(
-                    spanCount = spanCount,
-                    spacing = spacing,
-                    includeEdge = true
-                )
-            )
+//            recycleView.adapter = adapter
+//            recycleView.layoutManager = GridLayoutManager(context, spanCount)
+//            recycleView.addItemDecoration(
+//                MenuAdapter.GridSpacingItemDecoration(
+//                    spanCount = spanCount,
+//                    spacing = spacing,
+//                    includeEdge = true
+//                )
+//            )
         }
     }
 }

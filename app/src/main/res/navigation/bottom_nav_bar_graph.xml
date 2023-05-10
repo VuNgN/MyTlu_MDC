@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_bar_graph"
+    app:startDestination="@id/home">
+
+    <include app:graph="@navigation/tab_home_navigation" />
+    <include app:graph="@navigation/tab_feature_navigation" />
+    <include app:graph="@navigation/tab_notification_navigation" />
+    <include app:graph="@navigation/tab_setting_navigation" />
+
+</navigation>
